@@ -14,10 +14,11 @@ public class BulletSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("a"))
+        if(OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
+            print("spawned");
             GameObject bull = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
-            bull.GetComponent<Rigidbody>().AddForce(transform.position * 1000);
+     
         }
     }
 }
