@@ -9,16 +9,7 @@ public class Bat : MonoBehaviour
     void Start()
     {
         health = 3;
-    }
 
-    // The target marker.
-    public GameObject target;
-
-    // Angular speed in radians per sec.
-    float speed;
-
-    void Update()
-    {
 
         Vector3 targetDir = GameObject.Find("Player").transform.position - transform.position;
 
@@ -31,17 +22,29 @@ public class Bat : MonoBehaviour
         // Move our position a step closer to the target.
         transform.rotation = Quaternion.LookRotation(newDir);
 
-        GetComponent<Rigidbody>().AddForce(GameObject.Find("Player").transform.position - transform.position - new Vector3(0,5,0));
+        GetComponent<Rigidbody>().AddForce((GameObject.Find("Player").transform.position - transform.position) *5);
+    }
+
+    // The target marker.
+    public GameObject target;
+
+    // Angular speed in radians per sec.
+    float speed;
+
+    void Update()
+    {
+
 
     }
 
-    private void OnTriggerEnter(Colli)
+    private void OnTriggerEnter(Collider collider)
     {
-            Debug.Log("Collided with enemy");
+        Debug.Log("Collided with enemy");
+
 
             if(--health<=0)
             {
-                Destroy(this);
+                Destroy(gameObject);
             }
 
     }

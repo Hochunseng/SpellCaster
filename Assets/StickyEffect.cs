@@ -34,10 +34,11 @@ public class StickyEffect : MonoBehaviour
             Destroy(collision.collider.gameObject);
         }
 
-        GetComponentInChildren<ParticleSystem>().emissionRate = 100;
-        GetComponentInChildren<ParticleSystem>().startSize = 5;
+        GetComponentInChildren<ParticleSystem>().emissionRate = 175;
+        GetComponentInChildren<ParticleSystem>().startSize = 3;
         var ps = GetComponentInChildren<ParticleSystem>();
         var sh = ps.shape;
-        sh.radius = 5;
+        sh.radius = 3;
+
     }
 }
