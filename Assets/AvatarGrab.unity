@@ -263,6 +263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204cd6eb8629dd846a61cdb3429147b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  fire: {fileID: 1632734267}
   water: {fileID: 8300000, guid: 3849aa6d95099da47ba3aeb8e5e0b9b4, type: 3}
 --- !u!1 &351758541
 GameObject:
@@ -5257,6 +5259,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 838794662}
     m_Modifications:
+    - target: {fileID: 6019687652533773109, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterSpawner
+      objectReference: {fileID: 0}
     - target: {fileID: 2583003776269831788, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
         type: 3}
       propertyPath: m_audioClip
@@ -5267,40 +5274,35 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 6019687652533773109, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
-        type: 3}
-      propertyPath: m_Name
-      value: WaterSpawner
-      objectReference: {fileID: 0}
     - target: {fileID: 6019687652533773105, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.023
+      value: 0.022999763
       objectReference: {fileID: 0}
     - target: {fileID: 6019687652533773105, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.042
+      value: -0.041999817
       objectReference: {fileID: 0}
     - target: {fileID: 6019687652533773105, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.027
+      value: -0.026992798
       objectReference: {fileID: 0}
     - target: {fileID: 6019687652533773105, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6019687652533773105, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6019687652533773105, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6019687652533773105, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
         type: 3}
@@ -5377,6 +5379,16 @@ PrefabInstance:
       propertyPath: ShapeModule.angle
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6019687651641555676, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019687651641555676, guid: 7edc0dc5a021e6a44b351b4af0c9605c,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4032271198993777717, guid: 7edc0dc5a021e6a44b351b4af0c9605c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7edc0dc5a021e6a44b351b4af0c9605c, type: 3}
@@ -5385,6 +5397,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4602036064070630, guid: efe266538a8dcda4dbd04fbff7997053,
     type: 3}
   m_PrefabInstance: {fileID: 486447747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1632734267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1570132864004852, guid: 1d0e4f1499cebaa4992504fcb17e8871,
+    type: 3}
+  m_PrefabInstance: {fileID: 517590290}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1975285832
 GameObject:
@@ -5492,6 +5510,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 6312349435189095046, guid: e5ce4c2f940b21b43b8c54a6bfa94fee, type: 3}
+  storm: {fileID: 7216864772902853524, guid: c548c2f04f119b347a54a8acec4c21ee, type: 3}
+  lightning: {fileID: 7216864772902853524, guid: c5e59b0f616ec8844bb3b9dbc3e47337,
+    type: 3}
   source: {fileID: 0}
   fireball: {fileID: 8300000, guid: 2122b1f0a6b9c204c9ccef16665cf729, type: 3}
 --- !u!82 &1975285838

@@ -65,6 +65,7 @@
     <Compile Include="Assets\Bat.cs" />
     <Compile Include="Assets\BulletSpawn.cs" />
     <Compile Include="Assets\FlyingSpawner.cs" />
+    <Compile Include="Assets\Ghost.cs" />
     <Compile Include="Assets\LineRendererCtrl.cs" />
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Demo_Scene_Components\Scripts\DebrisScript.cs" />
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Demo_Scene_Components\Scripts\ExplosiveBarrelScript.cs" />
@@ -367,10 +368,13 @@
     <Compile Include="Assets\Oculus\VoiceMod\Scripts\Helpers\OVRMicInput.cs" />
     <Compile Include="Assets\Oculus\VoiceMod\Scripts\OVRVoiceMod.cs" />
     <Compile Include="Assets\Oculus\VoiceMod\Scripts\OVRVoiceModContext.cs" />
+    <Compile Include="Assets\ParticleCollision.cs" />
     <Compile Include="Assets\SpawnTimer.cs" />
     <Compile Include="Assets\StickyEffect.cs" />
+    <Compile Include="Assets\Thunder\Destroy.cs" />
     <Compile Include="Assets\WaterElements\ParticleDecalData.cs" />
     <Compile Include="Assets\WaterElements\ParticleDecalPool.cs" />
+    <Compile Include="Assets\WaterElements\ParticleLauncher.cs" />
     <Compile Include="Assets\WaterElements\WaterController.cs" />
     <Compile Include="Assets\WaterElements\WaterParticle.cs" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_PC_SingleComponent.shader" />

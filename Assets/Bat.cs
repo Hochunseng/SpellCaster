@@ -40,12 +40,29 @@ public class Bat : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         Debug.Log("Collided with enemy");
-
-
-            if(--health<=0)
+        if (collider.gameObject.CompareTag("Particle")
+            || collider.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Collided with particle or player");
+            if (--health <= 0)
             {
                 Destroy(gameObject);
             }
+        }
 
+
+
+
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Collided with particle");
+
+
+        if (--health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

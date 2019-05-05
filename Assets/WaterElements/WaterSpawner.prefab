@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6019687651641555676}
   - component: {fileID: 6019687651641555679}
   - component: {fileID: 5892813467315246683}
+  - component: {fileID: 521958155654654836}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -3555,7 +3556,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 0
     collisionMode: 0
@@ -3737,12 +3738,13 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
-    collisionShape0: {fileID: 0}
+    collisionShape0: {fileID: 5675547945048787024, guid: c82f0f4721afe9a47b653a61783c0e72,
+      type: 3}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}
     collisionShape3: {fileID: 0}
@@ -4762,11 +4764,23 @@ MeshCollider:
   m_GameObject: {fileID: 6019687651641555649}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
+--- !u!114 &521958155654654836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6019687651641555649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46a4524163e20247aeb01ebba124fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6019687652533773109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4780,6 +4794,7 @@ GameObject:
   - component: {fileID: 6019687652533773107}
   - component: {fileID: 6019687652533773106}
   - component: {fileID: 2583003776269831788}
+  - component: {fileID: 6638129343221314818}
   m_Layer: 0
   m_Name: WaterSpawner
   m_TagString: Untagged
@@ -4956,3 +4971,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &6638129343221314818
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6019687652533773109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
