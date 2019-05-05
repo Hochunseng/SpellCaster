@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class StickyEffect : MonoBehaviour
@@ -32,6 +33,10 @@ public class StickyEffect : MonoBehaviour
         if(collision.collider.gameObject.tag == "Enemy")
         {
             Destroy(collision.collider.gameObject);
+        }
+        if (collision.collider.gameObject.tag == "ExplosiveBarrel")
+        {
+            SceneManager.LoadScene("Forest");
         }
 
         GetComponentInChildren<ParticleSystem>().emissionRate = 175;

@@ -10,6 +10,7 @@ TagManager:
   - ExplosiveBarrel
   - Enemy
   - Particle
+  - Storm
   layers:
   - Default
   - TransparentFX

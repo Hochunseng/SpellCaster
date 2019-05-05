@@ -38,7 +38,7 @@ public class WaterController : MonoBehaviour
             {
                 print("spawned");
                 GetComponentInChildren<ParticleSystem>().Play();
-                OVRInput.SetControllerVibration(0.1f, 0.1f, OVRInput.Controller.LTouch);
+                OVRInput.SetControllerVibration(0.3f, 0.3f, OVRInput.Controller.LTouch);
             }
             else
             {

@@ -8,7 +8,9 @@ public class BulletSpawn : MonoBehaviour
     public GameObject storm;
     public GameObject lightning;
     public AudioSource source;
+    public AudioClip lightningSound;
     public AudioClip fireball;
+
     private int hit = 0;
     private float lightningZ;
     // Start is called before the first frame update
@@ -32,8 +34,8 @@ public class BulletSpawn : MonoBehaviour
             {
                 Debug.Log("Gary GILLESPIE");
 
-                GameObject thund = (GameObject)Instantiate(storm, transform.position, new Quaternion(0, 0, 0, 0));
-                thund.GetComponent<Rigidbody>().AddForce(transform.forward * 5000);
+                GameObject storming = (GameObject)Instantiate(storm, transform.position, new Quaternion(0, 0, 0, 0));
+                storming.GetComponent<Rigidbody>().AddForce(transform.forward * 5000);
                 OVRInput.SetControllerVibration(10, 10, OVRInput.Controller.RTouch);
                 OVRInput.SetControllerVibration(10, 10, OVRInput.Controller.LTouch);
                 hit = 0;
@@ -45,13 +47,10 @@ public class BulletSpawn : MonoBehaviour
             }
         }
         //Fireball
-        else
+        else if(OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
    
 
-            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
-            //if (Input.GetKeyDown("a"))
-            {
                 print("spawned");
                 GameObject bull = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
                 bull.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
@@ -59,22 +58,36 @@ public class BulletSpawn : MonoBehaviour
                 source.PlayOneShot(fireball, 0.5f);
 
                 OVRInput.SetControllerVibration(10, 10, OVRInput.Controller.RTouch);
-            }
-            else
-            {
-                OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
-            }
-        }
 
-        if(OVRInput.GetDown(OVRInput.Button.One) && hit >= 20)
+
+        }
+        //Thunder
+        else if (OVRInput.Get(OVRInput.Button.One))
         {
+            if (OVRInput.GetDown(OVRInput.Button.One))
+            {
 
-            lightningZ = transform.position.z;
-            Debug.Log($"Z is {lightningZ}");
+                lightningZ = transform.position.z;
+                Debug.Log($"Z is {lightningZ}");
 
-            hit = 0;
+
+            }
+
+            if (transform.position.z >= lightningZ + 0.5f && hit >= 40)
+            {
+                hit = 0;
+                source.PlayOneShot(lightningSound, 0.5f);
+                GameObject bull = (GameObject)Instantiate(lightning, transform.position + new Vector3(0, 0, 10), transform.rotation);
+                bull.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
+                OVRInput.SetControllerVibration(10, 10, OVRInput.Controller.RTouch);
+            }
+        }
+        else
+        {
+            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
         }
 
+        
         hit++;
     }
 }

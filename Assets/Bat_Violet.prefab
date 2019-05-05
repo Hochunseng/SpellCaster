@@ -1303,6 +1303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  delay: 5
   target: {fileID: 0}
 --- !u!54 &-49276792539887562
 Rigidbody:
