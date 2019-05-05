@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6312349434255861750}
   - component: {fileID: 6312349434255861744}
   - component: {fileID: 6312349434255861745}
-  m_Layer: 0
+  - component: {fileID: 3141201253466741434}
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4752,6 +4753,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3141201253466741434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312349434255861751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8abd98af4193db845b8ca8460d24004f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6312349435189095046
 GameObject:
   m_ObjectHideFlags: 0
@@ -4765,7 +4778,9 @@ GameObject:
   - component: {fileID: 6312349435189095040}
   - component: {fileID: 6312349435189095041}
   - component: {fileID: 6312349435189095053}
-  m_Layer: 0
+  - component: {fileID: 9037484552242671788}
+  - component: {fileID: 184263435824587640}
+  m_Layer: 8
   m_Name: MParticleOuter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4781,7 +4796,7 @@ Transform:
   m_GameObject: {fileID: 6312349435189095046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.33, y: -34.19, z: -146.289}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 6312349434255861750}
   m_Father: {fileID: 0}
@@ -4812,7 +4827,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4929bb14da9c3394093881fb2a6bfdb6, type: 2}
+  - {fileID: 2100000, guid: c48340091f207b044867681db2105dd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4840,7 +4855,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6312349435189095046}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -4861,3 +4876,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9037484552242671788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312349435189095046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8abd98af4193db845b8ca8460d24004f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &184263435824587640
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312349435189095046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

@@ -19,8 +19,13 @@ public class BulletSpawn : MonoBehaviour
         {
             print("spawned");
             GameObject bull = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
-            bull.GetComponent<Rigidbody>().AddForce(transform.forward * 5000);
-     
+            bull.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
+
+            OVRInput.SetControllerVibration(10, 10, OVRInput.Controller.RTouch);
+        }
+        else
+        {
+            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
         }
     }
 }

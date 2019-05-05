@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StickyEffect : MonoBehaviour
 {
+    private int t = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,16 +14,30 @@ public class StickyEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(++t == 1000)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("Collided");
-        if (collision.gameObject.name != "Enemy")
+        Debug.Log($"Hit terrain! {collision.collider.gameObject.name}");
+        
+
+        Debug.Log("Hit metal tagged object");
+
+        Destroy(GetComponent<Rigidbody>());
+       
+        if(collision.collider.gameObject.tag == "Enemy")
         {
-            print("Collided with wall");
-            this.GetComponent<Rigidbody>().isKinematic = true;
+            Destroy(collision.collider.gameObject);
         }
+
+        GetComponentInChildren<ParticleSystem>().emissionRate = 100;
+        GetComponentInChildren<ParticleSystem>().startSize = 5;
+        var ps = GetComponentInChildren<ParticleSystem>();
+        var sh = ps.shape;
+        sh.radius = 5;
     }
 }
