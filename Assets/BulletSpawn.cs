@@ -15,9 +15,11 @@ public class BulletSpawn : MonoBehaviour
     void Update()
     {
         if(OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
+        //if (Input.GetKeyDown("a"))
         {
             print("spawned");
             GameObject bull = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
+            bull.GetComponent<Rigidbody>().AddForce(transform.forward * 5000);
      
         }
     }
